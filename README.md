@@ -14,4 +14,4 @@ Give a description of the technologies and techniques used. Pictures, GIFs, or s
 
 This project is deployed on GitHub Pages:
 
-- git@github.com:Jpayne64/se_project_todo-app.git
+https://jpayne64.github.io/se_project_todo-app/

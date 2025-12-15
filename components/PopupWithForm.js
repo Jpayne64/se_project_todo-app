@@ -1,5 +1,3 @@
-import Popup from "./Popup.js";
-
 class PopupWithForm extends Popup {
   constructor({ popupSelector, handleFormSubmit }) {
     super({ popupSelector });
@@ -18,20 +16,20 @@ class PopupWithForm extends Popup {
     return inputValues;
   }
 
-  _setEventListeners() {
-    super._setEventListeners();
+  setEventListeners() {
+    super.setEventListeners();
 
     this._popupForm.addEventListener("submit", (evt) => {
       evt.preventDefault();
-      const inputValues = this._getInputValues();
-      this._handleFormSubmit(inputValues);
+
+      // validity gate
+      if (!this._popupForm.checkValidity()) {
+        return;
+      }
+
+      this._handleFormSubmit(this._getInputValues());
       this.close();
     });
-  }
-
-  open() {
-    super.open();
-    this._setEventListeners();
   }
 }
 
