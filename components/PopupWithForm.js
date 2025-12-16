@@ -30,6 +30,7 @@ class PopupWithForm extends Popup {
       }
 
       this._handleFormSubmit(this._getInputValues());
+      this._popupForm.reset();
       this.close();
     });
   }
